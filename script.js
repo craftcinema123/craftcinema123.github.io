@@ -1,0 +1,3 @@
+function image() {
+    alert("g")
+}
