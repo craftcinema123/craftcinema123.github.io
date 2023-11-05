@@ -25,21 +25,25 @@ html {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
 
 .image-container {
     text-align: center;
+    z-index: 1;
 }
 
 .animated-image {
     max-width: 43%;
     animation: moveUpDown 4s linear infinite alternate;
+    z-index: 1;
 }
 
 h1 {
     text-align: center;
     margin: 0px 0px 40px 0px;
     font-size: 29px;
+    z-index: 1;
 }
 
 p{
@@ -47,7 +51,35 @@ p{
     height: 1%;
     background: black;
     margin: 0px 0px 30px 0px;
+    z-index: 1;
 }
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Átlátszó háttér */
+    z-index: 2;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    text-align: center;
+}
+
 
 @keyframes moveUpDown {
     0% {
@@ -86,30 +118,44 @@ p{
     } 
 }
 
-@media only screen and (min-width: 988px) and (max-width: 1249px) {
+@media only screen and (min-width: 988px) and (max-width: 1084px) {
     .animated-image {
         max-width: 55%;
         animation: moveUpDown 4s linear infinite alternate;
     } 
 }
 
-@media only screen and (min-width: 1250px) and (max-width: 1298px) {
+@media only screen and (min-width: 1085px) and (max-width: 1164px) {
     .animated-image {
         max-width: 50%;
         animation: moveUpDown 4s linear infinite alternate;
     } 
 }
 
-@media only screen and (min-width: 1299px) and (max-width: 1379px) {
+@media only screen and (min-width: 1165px) and (max-width: 1249px) {
     .animated-image {
         max-width: 45%;
         animation: moveUpDown 4s linear infinite alternate;
     } 
 }
 
-@media only screen and (min-width: 1380px) {
+@media only screen and (min-width: 1250px) and (max-width: 1298px) {
     .animated-image {
         max-width: 40%;
+        animation: moveUpDown 4s linear infinite alternate;
+    } 
+}
+
+@media only screen and (min-width: 1299px) and (max-width: 1379px) {
+    .animated-image {
+        max-width: 35%;
+        animation: moveUpDown 4s linear infinite alternate;
+    } 
+}
+
+@media only screen and (min-width: 1380px) {
+    .animated-image {
+        max-width: 30%;
         animation: moveUpDown 4s linear infinite alternate;
     } 
 }
